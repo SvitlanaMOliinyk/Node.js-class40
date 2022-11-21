@@ -1,25 +1,27 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form</title>
-</head>
-<body>
-  <div class="container text-center mt-5">
-<form method="POST" action="/weather">
-<input type="text" name="cityName" value="Enter a city" placeholder="Enter a city" class="form-control text-muted">
-<button class="btn btn-outline-success mt-3">Submit</button>
-</form>
-{{#if value}}
-<p>The temperature in {{this.cityName}} is {{this.value}}</p>
-{{else}}
-<p>{{weatherText}}</p>
-{{/if}}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="container text-center mt-5">
+      <form method="POST" action="/weather">
+        <input
+          type="text"
+          name="cityName"
+          placeholder="Enter a city"
+          class="form-control text-muted"
+        />
+        <button class="btn btn-outline-success mt-3">Submit</button>
+      </form>
 
-
-  </div>
-  
-</body>
+      {{#if value}}
+        <p>The temperature in {{this.cityName}} is {{this.value}}</p>
+      {{else}}
+        <p class="weather">{{weatherText}}</p>
+      {{/if}}
+    </div>
+  </body>
 </html>

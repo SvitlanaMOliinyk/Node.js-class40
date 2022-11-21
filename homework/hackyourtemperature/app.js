@@ -19,23 +19,30 @@ app.get("/", function (req, res) {
 app.get("/weather", function (req, res) {
   res.render("index");
 });
+
 app.post("/weather", async (req, res) => {
   const cityName = req.body.cityName;
+  if (cityName === undefined || cityName === "") {
+    res.render("index", {
+      weatherText: "Please enter a city name",
+    });
+    return;
+  }
+
   try {
     const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${API_KEY}&units=metric`;
     const fetchWeather = await fetch(apiURL);
     const jsonFormat = await fetchWeather.json();
     const value = jsonFormat.main.temp;
-  
+
     res.render("index", {
       cityName,
       value,
     });
-
   } catch (error) {
     console.log(error);
-      res.render("index", { weatherText: "City is not found!" });
+    res.render("index", { weatherText: "City is not found!" });
   }
 });
 
-export default app
+export default app;
