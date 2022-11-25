@@ -1,0 +1,12 @@
+{
+  "name": "1-pad-numbers",
+  "version": "1.0.0",
+  "description": "Lets practice how to use code from other developers in our applications. In the file `/1-pad-numbers/padLeft.js` you will find a function I wrote the other day. Study the function and read the description to understand what it does.",
+  "main": "padLeft.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
